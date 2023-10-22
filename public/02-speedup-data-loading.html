@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Alexandre Strube // Sabrina Benassou">
-  <meta name="dcterms.date" content="2023-12-13">
-  <title>Getting Started with AI on Supercomputers</title>
+  <meta name="author" content="Mathis Bode">
+  <meta name="dcterms.date" content="2023-10-25">
+  <title>High-Performance Computing for Multiphase Reacting Flows</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -20,8 +20,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -29,7 +32,7 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -222,42 +225,14 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Getting Started with AI on Supercomputers</h1>
-  <p class="subtitle">Speedup Data loading</p>
-  <p class="author">Alexandre Strube // Sabrina Benassou</p>
-  <p class="date">December 13, 2023</p>
+  <h1 class="title">High-Performance Computing for Multiphase Reacting
+Flows</h1>
+  <p class="subtitle">Machine-Learning assisted combustion
+simulations</p>
+  <p class="author">Mathis Bode</p>
+  <p class="date">October 25, 2023</p>
 </section>
 
-<section class="slide level2">
-
-<h3 id="schedule-for-day-2">Schedule for day 2</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Title</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>09:00 - 09:15</td>
-<td>Welcome, questions</td>
-</tr>
-<tr class="even">
-<td>09:15 - 10:30</td>
-<td>Speedup data loading</td>
-</tr>
-<tr class="odd">
-<td>10:30 - 11:00</td>
-<td>Coffee Break (flexible)</td>
-</tr>
-<tr class="even">
-<td>10:30 - 13:00</td>
-<td>Parallelize Training</td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="lets-talk-about-data" class="slide level2">
 <h2>Let’s talk about DATA</h2>
 <ul>

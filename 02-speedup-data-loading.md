@@ -1,19 +1,8 @@
 ---
-author: Alexandre Strube // Sabrina Benassou
-title: Getting Started with AI on Supercomputers 
-subtitle: Speedup Data loading
-date: December 13, 2023
----
-
-### Schedule for day 2
-
-| Time          | Title                |
-| ------------- | -----------          |
-| 09:00 - 09:15 | Welcome, questions   |
-| 09:15 - 10:30 | Speedup data loading |
-| 10:30 - 11:00 | Coffee Break (flexible) |
-| 10:30 - 13:00 | Parallelize Training |
-
+author: Mathis Bode
+title: High-Performance Computing for Multiphase Reacting Flows
+subtitle: Machine-Learning assisted combustion simulations
+date: October 25, 2023
 ---
 
 ## Let's talk about DATA

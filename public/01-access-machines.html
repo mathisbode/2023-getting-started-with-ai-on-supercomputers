@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Alexandre Strube // Sabrina Benassou">
-  <meta name="dcterms.date" content="2023-12-12">
-  <title>Accessing the machines, intro</title>
+  <meta name="author" content="Mathis Bode">
+  <meta name="dcterms.date" content="2023-10-25">
+  <title>High-Performance Computing for Multiphase Reacting Flows</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -225,44 +225,14 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Accessing the machines, intro</h1>
-  <p class="author">Alexandre Strube // Sabrina Benassou</p>
-  <p class="date">December 12, 2023</p>
+  <h1 class="title">High-Performance Computing for Multiphase Reacting
+Flows</h1>
+  <p class="subtitle">Machine-Learning assisted combustion
+simulations</p>
+  <p class="author">Mathis Bode</p>
+  <p class="date">October 25, 2023</p>
 </section>
 
-<section id="communication" class="slide level2">
-<h2>Communication:</h2>
-<p>Links for the complimentary parts of this course:</p>
-<ul>
-<li class="fragment"><a
-href="https://go.fzj.de/intro-sc-ai-2023-zoom">Zoom</a></li>
-<li class="fragment"><a
-href="https://go.fzj.de/intro-sc-ai-2023-slack">Slack</a></li>
-<li class="fragment"><a
-href="https://go.fzj.de/intro-sc-ai-2023-course">JSC Training
-Page</a></li>
-<li class="fragment"><a
-href="https://go.fzj.de/intro-sc-ai-2023-project-join">Judoor project
-page invite</a></li>
-<li class="fragment"><a href="http://go.fzj.de/intro-sc-ai-2023">This
-document: http://go.fzj.de/intro-sc-ai-2023</a></li>
-<li class="fragment">Our mailing list for <a
-href="https://lists.fz-juelich.de/mailman/listinfo/ml">AI news</a></li>
-<li class="fragment"><a
-href="https://go.fzj.de/intro-sc-ai-2023-survey">Survey at the end of
-the course</a></li>
-<li class="fragment"><a
-href="https://gitlab.jsc.fz-juelich.de/kesselheim1/sc_venv_template">Virtual
-Environment template</a></li>
-<li class="fragment"><a
-href="https://go.fzj.de/intro-sc-ai-2023-repo">SOURCE CODE OF THE WHOLE
-COURSE on Github - Including presentations</a></li>
-<li class="fragment"><a
-href="https://go.fzj.de/intro-sc-ai-2023-other-courses">Other courses at
-JSC</a> <img
-data-src="images/Logo_FZ_Juelich_rgb_Schutzzone_transparent.svg" /></li>
-</ul>
-</section>
 <section id="goals-for-this-course" class="slide level2">
 <h2>Goals for this course:</h2>
 <ul>
@@ -271,8 +241,8 @@ machines 👩‍💻</li>
 <li class="fragment">Put your data in way that supercomputer can use it
 fast 💨</li>
 <li class="fragment">Distribute your ML workload 💪</li>
-<li class="fragment">Important: This is <em><em>NOT</em></em> a basic AI
-course 🙇‍♂️
+<li class="fragment">Important: This is <em><em>ONLY PARTLY</em></em> a
+basic AI course 🙇‍♂️
 <ul>
 <li class="fragment">If you need one, check <a
 href="https://course.fast.ai">fast.ai</a></li>
@@ -281,8 +251,8 @@ href="https://course.fast.ai">fast.ai</a></li>
 <p><img
 data-src="images/Logo_FZ_Juelich_rgb_Schutzzone_transparent.svg" /></p>
 </section>
-<section id="team" class="slide level2">
-<h2>Team:</h2>
+<section id="source" class="slide level2">
+<h2>Source:</h2>
 <div class="container">
 <div class="col">
 <figure>
@@ -299,69 +269,6 @@ data-src="images/Logo_FZ_Juelich_rgb_Schutzzone_transparent.svg" /></p>
 </div>
 <p><img
 data-src="images/Logo_FZ_Juelich_rgb_Schutzzone_transparent.svg" /></p>
-</section>
-<section class="slide level2">
-
-<h3 id="schedule-for-day-1">Schedule for day 1</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Title</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>09:00 - 09:15</td>
-<td>Welcome</td>
-</tr>
-<tr class="even">
-<td>09:15 - 10:00</td>
-<td>Introduction</td>
-</tr>
-<tr class="odd">
-<td>10:00 - 10:15</td>
-<td>Coffee break</td>
-</tr>
-<tr class="even">
-<td>10:00 - 10:30</td>
-<td>Judoor, Keys</td>
-</tr>
-<tr class="odd">
-<td>10:30 - 11:00</td>
-<td>SSH, Jupyter, VS Code</td>
-</tr>
-<tr class="even">
-<td>11:00 - 11:15</td>
-<td>Coffee Break</td>
-</tr>
-<tr class="odd">
-<td>11:15 - 12:00</td>
-<td>Running services on the login and compute nodes</td>
-</tr>
-<tr class="even">
-<td>12:00 - 12:15</td>
-<td>Coffee Break</td>
-</tr>
-<tr class="odd">
-<td>12:30 - 13:00</td>
-<td>Sync (everyone should be at the same point)</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section class="slide level2">
-
-<h3 id="note">Note</h3>
-<p>Please open this document on your own browser! We will need it for
-the exercises. <a
-href="http://go.fzj.de/intro-sc-ai-2023">http://go.fzj.de/intro-sc-ai-2023</a></p>
-<figure>
-<img data-src="images/intro-sc-ai-2023-qr.png"
-alt="Mobile friendly, but you need it on your computer, really" />
-<figcaption aria-hidden="true">Mobile friendly, but you need it on your
-computer, really</figcaption>
-</figure>
 </section>
 <section class="slide level2">
 
@@ -534,7 +441,7 @@ compile, etc</li>
 <li class="fragment">Go to <a
 href="https://go.fzj.de/intro-sc-ai-2023-project-join">https://go.fzj.de/intro-sc-ai-2023-project-join</a></li>
 <li class="fragment">Join the course project
-<code>training2324</code></li>
+<code>training2340</code></li>
 <li class="fragment">Sign the Usage Agreements (<a
 href="https://drive.google.com/file/d/1mEN1GmWyGFp75uMIi4d6Tpek2NC_X8eY/view">Video</a>)</li>
 <li class="fragment">Compute time allocation is based on compute
@@ -548,9 +455,9 @@ BOOSTER: 8 * 64 * 48 = 24576 core-h!</li>
 <section id="jupyter" class="slide level2">
 <h2>Jupyter</h2>
 <p><a
-href="https://jupyter-jsc.fz-juelich.de">jupyter-jsc.fz-juelich.de</a></p>
+href="https://jupyter-coec.jsc.fz-juelich.de">jupyter-coec.jsc.fz-juelich.de</a></p>
 <ul>
-<li class="fragment">Jupyter-JSC uses the queue</li>
+<li class="fragment">Jupyter-CoEC uses the queue</li>
 <li class="fragment">When you are working on it, you are using project
 time ⌛️</li>
 <li class="fragment"><em>Yes, if you are just thinking and looking at
@@ -568,32 +475,6 @@ attention to the partition - DON’T RUN IT ON THE LOGIN NODE!!!</h4>
 </section>
 <section id="connecting-to-juwels-booster-1" class="slide level2">
 <h2>Connecting to JUWELS BOOSTER</h2>
-</section>
-<section id="vscode" class="slide level2">
-<h2>VSCode</h2>
-<ul>
-<li class="fragment"><a
-href="https://code.visualstudio.com/download">Download VScode:
-code.visualstudio.com</a></li>
-<li class="fragment">Install and run it
-<ul>
-<li class="fragment">On the local terminal, type <code>code</code></li>
-</ul></li>
-<li class="fragment">Install <a
-href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote
-Development Tools</a></li>
-<li class="fragment">Install <a
-href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote:
-SSH</a></li>
-<li class="fragment">If you have Windows, you need WSL as explained on
-the email.</li>
-</ul>
-</section>
-<section id="vscode-1" class="slide level2">
-<h2>VSCode</h2>
-<h3 id="now-with-the-remote-explorer-tab">Now with the remote explorer
-tab</h3>
-<p><img data-src="images/vscode-welcome.png" /></p>
 </section>
 <section class="slide level2">
 
@@ -615,8 +496,6 @@ NODE</li>
 <section class="slide level2">
 
 <h3 id="ssh-1">SSH</h3>
-<h4 id="create-key-in-vscodes-terminal-menu-view-terminal">Create key in
-VSCode’s Terminal (menu View-&gt;Terminal)</h4>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/.ssh/</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-a</span> 100 <span class="at">-t</span> ed25519 <span class="at">-f</span> ~/.ssh/id_ed25519-JSC</span></code></pre></div>
@@ -684,16 +563,6 @@ href="https://www.whatismyip.com">https://www.whatismyip.com</a></strong></p>
 <section class="slide level2">
 
 <h3 id="ssh-6">SSH</h3>
-<h4 id="find-your-ipname-range-1">Find your ip/name range</h4>
-<p><img data-src="images/whatismyip.png" /></p>
-<ul>
-<li class="fragment">Let’s keep this inside vscode:
-<code>code key.txt</code> and paste the number you got</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="ssh-7">SSH</h3>
 <p>Did everyone get their <strong>own</strong> ip address?</p>
 </section>
 <section class="slide level2">
@@ -711,8 +580,8 @@ href="https://www.whatismyip.com">https://www.whatismyip.com</a></strong></p>
 <h3 id="ssh---example-93.199.55.163">SSH - Example:
 <code>93.199.55.163</code></h3>
 <ul>
-<li class="fragment">Go to VSCode and make it simpler, replace the 2nd
-half with <code>"0.0/16"</code>:
+<li class="fragment">Make it simpler, replace the 2nd half with
+<code>"0.0/16"</code>:
 <ul>
 <li class="fragment">It was <code>93.199.55.163</code></li>
 <li class="fragment">Becomes <code>93.199.0.0/16</code> (with YOUR
@@ -747,7 +616,7 @@ which you just opened</p></li>
 </section>
 <section class="slide level2">
 
-<h3 id="ssh-8">SSH</h3>
+<h3 id="ssh-7">SSH</h3>
 <h4 id="example-93.199.0.016">Example: <code>93.199.0.0/16</code></h4>
 <ul>
 <li class="fragment">Put them together and copy again:</li>
@@ -757,7 +626,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="
 </section>
 <section class="slide level2">
 
-<h3 id="ssh-9">SSH</h3>
+<h3 id="ssh-8">SSH</h3>
 <ul>
 <li class="fragment">Let’s add it on <a
 href="https://judoor.fz-juelich.de">Judoor</a></li>
@@ -767,7 +636,7 @@ href="https://judoor.fz-juelich.de">Judoor</a></li>
 </section>
 <section class="slide level2">
 
-<h3 id="ssh-10">SSH</h3>
+<h3 id="ssh-9">SSH</h3>
 <h4 id="add-new-key-to-judoor">Add new key to <a
 href="https://judoor.fz-juelich.de">Judoor</a></h4>
 <p><img data-src="images/manage-ssh-keys-from-and-key.png"
@@ -798,7 +667,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="
 are connected to the supercomputer</h4>
 <div class="sourceCode" id="cb8"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a shortcut for the project on the home folder</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="va">$PROJECT_training2324</span> ~/course</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="va">$PROJECT_training2340</span> ~/course</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a folder for myself</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> course/<span class="va">$USER</span></span>
@@ -938,44 +807,16 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href=
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="ex">------------------------------------------------------------------------------------</span></span></code></pre></div>
 </section>
-<section id="vscode-2" class="slide level2">
-<h2>VSCode</h2>
-<h4 id="editing-files-on-the-supercomputers">Editing files on the
-supercomputers</h4>
-<p><img data-src="images/vscode-remotes.png" /></p>
-</section>
-<section id="vscode-3" class="slide level2">
-<h2>VSCode</h2>
-<p><img data-src="images/vscode-jusuf.png" /></p>
-</section>
-<section id="vscode-4" class="slide level2">
-<h2>VSCode</h2>
-<ul>
-<li class="fragment">You can have a terminal inside VSCode:
-<ul>
-<li class="fragment">Go to the menu View-&gt;Terminal</li>
-</ul></li>
-</ul>
-</section>
-<section id="vscode-5" class="slide level2">
-<h2>VSCode</h2>
-<ul>
-<li class="fragment"><p>From the VSCode’s terminal, navigate to your
-“course” folder and to the name you created earlier.</p></li>
-<li class="fragment"><div class="sourceCode" id="cb14"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span>/course/<span class="va">$USER</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div></li>
-<li class="fragment"><p>This is out working directory. We do everything
-here.</p></li>
-</ul>
-</section>
 <section class="slide level2">
 
 <h3 id="demo-code">Demo code</h3>
-<h4 id="create-a-new-file-matrix.py-on-vscode-on-juwels-booster">Create
-a new file “<code>matrix.py</code>” on VSCode on Juwels BOOSTER</h4>
+<h4 id="create-a-new-file-matrix.py-on-juwels-booster">Create a new file
+“<code>matrix.py</code>” on Juwels BOOSTER</h4>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span>/course/<span class="va">$USER</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
 <div class="sourceCode" id="cb15"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> matrix.py</span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vi</span> matrix.py</span></code></pre></div>
 <p>Paste this into the file:</p>
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> torch</span>
@@ -1026,10 +867,10 @@ how much of it, for how long, and what to do with the results</li>
 
 <h3 id="slurm-submission-file-example">Slurm submission file
 example</h3>
-<p><code>code juwelsbooster-matrix.sbatch</code></p>
+<p><code>vi juwelsbooster-matrix.sbatch</code></p>
 <div class="sourceCode" id="cb18"><pre
 class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="co">#SBATCH --account=training2324           # Who pays?</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="co">#SBATCH --account=training2340           # Who pays?</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a><span class="co">#SBATCH --nodes=1                        # How many compute nodes</span></span>
 <span id="cb18-4"><a href="#cb18-4"></a><span class="co">#SBATCH --job-name=matrix-multiplication</span></span>
 <span id="cb18-5"><a href="#cb18-5"></a><span class="co">#SBATCH --ntasks-per-node=1              # How many mpi processes/node</span></span>
@@ -1038,7 +879,7 @@ class="sourceCode numberSource bash number-lines"><code class="sourceCode bash">
 <span id="cb18-8"><a href="#cb18-8"></a><span class="co">#SBATCH --error=error.%j</span></span>
 <span id="cb18-9"><a href="#cb18-9"></a><span class="co">#SBATCH --time=00:01:00          # For how long can it run?</span></span>
 <span id="cb18-10"><a href="#cb18-10"></a><span class="co">#SBATCH --partition=booster         # Machine partition</span></span>
-<span id="cb18-11"><a href="#cb18-11"></a><span class="co">#SBATCH --reservation=training2338-day1 # For today only</span></span>
+<span id="cb18-11"><a href="#cb18-11"></a><span class="co">#SBATCH --reservation=training2340 # For today only</span></span>
 <span id="cb18-12"><a href="#cb18-12"></a></span>
 <span id="cb18-13"><a href="#cb18-13"></a><span class="ex">module</span> load Stages/2023</span>
 <span id="cb18-14"><a href="#cb18-14"></a><span class="ex">module</span> load GCC OpenMPI PyTorch  <span class="co"># Load the correct modules on the compute node(s)</span></span>
@@ -1082,8 +923,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href=
 <li class="fragment">Some partitions have reservations, which means that
 only certain users can use them at certain times.</li>
 <li class="fragment">For this course, we have:</li>
-<li class="fragment">Juwels Booster: <code>training2338-day1</code> and
-<code>training2338-day2</code></li>
+<li class="fragment">Juwels Booster: <code>training2340</code></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -1103,7 +943,7 @@ them!</h4>
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that this number is the job id. It&#39;s different for every job</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> output.412169 </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> error.412169 </span></code></pre></div>
-<p>Or simply open it on VSCode!</p>
+<p>Or simply open it with vi!</p>
 </section>
 <section id="extra-software-modules-and-kernels" class="slide level2">
 <h2>Extra software, modules and kernels</h2>
@@ -1202,7 +1042,7 @@ classifier</h3>
 <code>fastai.sbatch</code></h4>
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --account=training2324</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --account=training2340</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-user=MYUSER@fz-juelich.de</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-type=ALL</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1</span></span>
@@ -1213,7 +1053,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href=
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=error.%j</span></span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:10:00</span></span>
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition=booster</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --reservation=training2338-day1 # For today only</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --reservation=training2340</span></span>
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /p/home/jusers/<span class="va">$USER</span>/juwels/course/<span class="va">$USER</span></span>
 <span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> sc_venv_template/activate.sh <span class="co"># Now we finally use the fastai module</span></span>
@@ -1348,7 +1188,6 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href=
 <section id="check-output-files" class="slide level2">
 <h2>Check output files</h2>
 <ul>
-<li class="fragment">You can see them within VSCode</li>
 <li class="fragment"><div class="sourceCode" id="cb39"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> activation script must be sourced, otherwise the virtual environment will not work.</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Setting</span> vars</span>
@@ -1412,7 +1251,6 @@ supercomputer’s port 3000 as port 1234 locally</figcaption>
 <section id="port-forwarding-demo" class="slide level2">
 <h2>Port forwarding demo:</h2>
 <ul>
-<li class="fragment">On VSCode’s terminal:</li>
 <li class="fragment"><div class="sourceCode" id="cb41"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span>/course/<span class="va">$USER</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> sc_venv_template/activate.sh</span>
@@ -1429,8 +1267,8 @@ href="http://localhost:12345">http://localhost:12345</a></li>
 Booster</h3>
 <p><img data-src="images/tensorboard-cats.png" /></p>
 </section>
-<section id="day-1-recap" class="slide level2">
-<h2>Day 1 recap</h2>
+<section id="recap-2" class="slide level2">
+<h2>Recap</h2>
 <p>As of now, I expect you managed to:</p>
 <ul>
 <li class="fragment">Stay awake for the most part of this morning
@@ -1438,7 +1276,6 @@ Booster</h3>
 <li class="fragment">Have your own ssh keys 🗝️🔐</li>
 <li class="fragment">A working ssh connection to the supercomputers
 🖥️</li>
-<li class="fragment">Can edit and transfer files via VSCode 📝</li>
 <li class="fragment">Submit jobs and read results 📫</li>
 <li class="fragment">Access web services on the login nodes 🧙‍♀️</li>
 <li class="fragment">Is ready to make great code! 💪</li>
@@ -1493,7 +1330,7 @@ Host *.booster
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--time</span><span class="op">=</span>00:05:00 <span class="dt">\</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">--nodes</span><span class="op">=</span>1 <span class="at">--ntasks</span><span class="op">=</span>1 <span class="dt">\</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">--partition</span><span class="op">=</span>booster <span class="dt">\</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">--account</span> training2324 <span class="dt">\</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">--account</span> training2340 <span class="dt">\</span></span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">--cpu_bind</span><span class="op">=</span>none <span class="dt">\</span></span>
 <span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">--pty</span> /bin/bash <span class="at">-i</span></span>
 <span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>

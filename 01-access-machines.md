@@ -1,26 +1,8 @@
 ---
-author: Alexandre Strube // Sabrina Benassou
-title: Accessing the machines, intro
-# subtitle: A primer in supercomputers`
-date: December 12, 2023
----
-## Communication:
-
-Links for the complimentary parts of this course: 
-
-- [Zoom](https://go.fzj.de/intro-sc-ai-2023-zoom)
-- [Slack](https://go.fzj.de/intro-sc-ai-2023-slack)
-- [JSC Training Page](https://go.fzj.de/intro-sc-ai-2023-course)
-- [Judoor project page invite](https://go.fzj.de/intro-sc-ai-2023-project-join)
-- [This document: http://go.fzj.de/intro-sc-ai-2023](http://go.fzj.de/intro-sc-ai-2023)
-- Our mailing list for [AI news](https://lists.fz-juelich.de/mailman/listinfo/ml)
-- [Survey at the end of the course](https://go.fzj.de/intro-sc-ai-2023-survey)
-- [Virtual Environment template](https://gitlab.jsc.fz-juelich.de/kesselheim1/sc_venv_template)
-- [SOURCE CODE OF THE WHOLE COURSE on Github - Including presentations](https://go.fzj.de/intro-sc-ai-2023-repo)
-- [Other courses at JSC](https://go.fzj.de/intro-sc-ai-2023-other-courses)
-![](images/Logo_FZ_Juelich_rgb_Schutzzone_transparent.svg)
-
-
+author: Mathis Bode
+title: High-Performance Computing for Multiphase Reacting Flows
+subtitle: Machine-Learning assisted combustion simulations
+date: October 25, 2023
 ---
 
 ## Goals for this course:
@@ -28,14 +10,14 @@ Links for the complimentary parts of this course:
 - Make sure you know how to access and use our machines 👩‍💻
 - Put your data in way that supercomputer can use it fast 💨
 - Distribute your ML workload 💪
-- Important: This is _*NOT*_ a basic AI course 🙇‍♂️
+- Important: This is _*ONLY PARTLY*_ a basic AI course 🙇‍♂️
   - If you need one, check [fast.ai](https://course.fast.ai)
 
 ![](images/Logo_FZ_Juelich_rgb_Schutzzone_transparent.svg)
 
 ---
 
-## Team:
+## Source:
 
 ::: {.container}
 :::: {.col}
@@ -47,31 +29,6 @@ Links for the complimentary parts of this course:
 :::
 
 ![](images/Logo_FZ_Juelich_rgb_Schutzzone_transparent.svg)
-
----
-
-### Schedule for day 1
-
-| Time          | Title        |
-| ------------- | -----------  |
-| 09:00 - 09:15 | Welcome      |
-| 09:15 - 10:00 | Introduction |
-| 10:00 - 10:15 | Coffee break |
-| 10:00 - 10:30 | Judoor, Keys |
-| 10:30 - 11:00 | SSH, Jupyter, VS Code |
-| 11:00 - 11:15 | Coffee Break |
-| 11:15 - 12:00 | Running services on the login and compute nodes | 
-| 12:00 - 12:15 | Coffee Break |
-| 12:30 - 13:00 | Sync (everyone should be at the same point) |
-
----
-
-### Note
-
-Please open this document on your own browser! We will need it for the exercises.
-[http://go.fzj.de/intro-sc-ai-2023](http://go.fzj.de/intro-sc-ai-2023)
-
-![Mobile friendly, but you need it on your computer, really](images/intro-sc-ai-2023-qr.png)
 
 ---
 
@@ -217,7 +174,7 @@ Please open this document on your own browser! We will need it for the exercises
 
 #### Getting compute time
 - Go to [https://go.fzj.de/intro-sc-ai-2023-project-join](https://go.fzj.de/intro-sc-ai-2023-project-join)
-- Join the course project `training2324`
+- Join the course project `training2340`
 - Sign the Usage Agreements ([Video](https://drive.google.com/file/d/1mEN1GmWyGFp75uMIi4d6Tpek2NC_X8eY/view))
 - Compute time allocation is based on compute projects. For every compute job, a compute project pays.
 - Time is measured in core-hours. One hour of Juwels BOOSTER is 48 core-hours.
@@ -227,9 +184,9 @@ Please open this document on your own browser! We will need it for the exercises
 
 ## Jupyter
 
-[jupyter-jsc.fz-juelich.de](https://jupyter-jsc.fz-juelich.de)
+[jupyter-coec.jsc.fz-juelich.de](https://jupyter-coec.jsc.fz-juelich.de)
 
-- Jupyter-JSC uses the queue 
+- Jupyter-CoEC uses the queue 
 - When you are working on it, you are using project time ⌛️
 - *Yes, if you are just thinking and looking at the 📺, you are burning project time*🤦‍♂️
 - It's useful for small tests - not for full-fledged development 🙄
@@ -248,25 +205,6 @@ Please open this document on your own browser! We will need it for the exercises
 
 ---
 
-## VSCode
-
-- [Download VScode: code.visualstudio.com](https://code.visualstudio.com/download)
-- Install and run it
-  - On the local terminal, type `code`
-- Install [Remote Development Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-- Install [Remote: SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
-- If you have Windows, you need WSL as explained on the email.
-
----
-
-## VSCode
-
-### Now with the remote explorer tab
-![](images/vscode-welcome.png)
-
-
----
-
 #### SSH
 - SSH is a secure shell (terminal) connection to another computer
 - You connect from your computer to the LOGIN NODE
@@ -279,8 +217,6 @@ Please open this document on your own browser! We will need it for the exercises
 ---
 
 ### SSH
-
-#### Create key in VSCode's Terminal (menu View->Terminal)
 
 ```bash
 mkdir ~/.ssh/
@@ -359,16 +295,6 @@ Open **[https://www.whatismyip.com](https://www.whatismyip.com)**
 
 ### SSH
 
-#### Find your ip/name range
-
-![](images/whatismyip.png)
-
-- Let's keep this inside vscode: `code key.txt` and paste the number you got
-
----
-
-### SSH
-
 Did everyone get their **own** ip address?
 
 ---
@@ -383,7 +309,7 @@ Did everyone get their **own** ip address?
 
 ### SSH - Example: `93.199.55.163`
 
-- Go to VSCode and make it simpler, replace the 2nd half with `"0.0/16"`:
+- Make it simpler, replace the 2nd half with `"0.0/16"`:
   - It was `93.199.55.163`
   - Becomes `93.199.0.0/16` (with YOUR number, not with the example)
 - Add a `from=""` around it
@@ -463,7 +389,7 @@ strube1@juwels22~ $
 
 ```bash
 # Create a shortcut for the project on the home folder
-ln -s $PROJECT_training2324 ~/course
+ln -s $PROJECT_training2340 ~/course
 
 # Create a folder for myself
 mkdir course/$USER
@@ -620,44 +546,16 @@ The following modules match your search criteria: "toml"
 ```
 ---
 
-## VSCode
-#### Editing files on the supercomputers
+### Demo code
+#### Create a new file "`matrix.py`" on Juwels BOOSTER
 
-![](images/vscode-remotes.png)
-
----
-
-## VSCode
-
-![](images/vscode-jusuf.png)
-
----
-
-## VSCode
-
-- You can have a terminal inside VSCode: 
-  - Go to the menu View->Terminal
-
---- 
-
-## VSCode
-
-- From the VSCode's terminal, navigate to your "course" folder and to the name you created earlier.
-
-- ```bash
+```bash
 cd $HOME/course/$USER
 pwd
 ```
 
-- This is out working directory. We do everything here.
-
----
-
-### Demo code
-#### Create a new file "`matrix.py`" on VSCode on Juwels BOOSTER
-
 ```bash
-code matrix.py
+vi matrix.py
 ```
 
 Paste this into the file:
@@ -714,11 +612,11 @@ Simple Linux Utility for Resource Management
 
 ### Slurm submission file example
 
-`code juwelsbooster-matrix.sbatch`
+`vi juwelsbooster-matrix.sbatch`
 
 ``` {.bash .number-lines}
 #!/bin/bash
-#SBATCH --account=training2324           # Who pays?
+#SBATCH --account=training2340           # Who pays?
 #SBATCH --nodes=1                        # How many compute nodes
 #SBATCH --job-name=matrix-multiplication
 #SBATCH --ntasks-per-node=1              # How many mpi processes/node
@@ -727,7 +625,7 @@ Simple Linux Utility for Resource Management
 #SBATCH --error=error.%j
 #SBATCH --time=00:01:00          # For how long can it run?
 #SBATCH --partition=booster         # Machine partition
-#SBATCH --reservation=training2338-day1 # For today only
+#SBATCH --reservation=training2340 # For today only
 
 module load Stages/2023
 module load GCC OpenMPI PyTorch  # Load the correct modules on the compute node(s)
@@ -777,7 +675,7 @@ squeue --me
 
 - Some partitions have reservations, which means that only certain users can use them at certain times.
 - For this course, we have:
-- Juwels Booster: `training2338-day1` and `training2338-day2`
+- Juwels Booster: `training2340`
 
 --- 
 
@@ -799,7 +697,7 @@ cat output.412169
 cat error.412169 
 ```
 
-Or simply open it on VSCode!
+Or simply open it with vi!
 
 ---
 
@@ -898,7 +796,7 @@ learn.fit_one_cycle(3, cbs=TensorBoardCallback('runs', trace_model=True))
 
 ```bash
 #!/bin/bash
-#SBATCH --account=training2324
+#SBATCH --account=training2340
 #SBATCH --mail-user=MYUSER@fz-juelich.de
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1
@@ -909,7 +807,7 @@ learn.fit_one_cycle(3, cbs=TensorBoardCallback('runs', trace_model=True))
 #SBATCH --error=error.%j
 #SBATCH --time=00:10:00
 #SBATCH --partition=booster
-#SBATCH --reservation=training2338-day1 # For today only
+#SBATCH --reservation=training2340
 
 cd /p/home/jusers/$USER/juwels/course/$USER
 source sc_venv_template/activate.sh # Now we finally use the fastai module
@@ -1061,7 +959,6 @@ watch squeue --me
 
 ## Check output files
 
-- You can see them within VSCode
 - ```bash
 The activation script must be sourced, otherwise the virtual environment will not work.
 Setting vars
@@ -1121,7 +1018,6 @@ A tunnel which exposes the supercomputer's port 3000 as port 1234 locally](image
 
 ## Port forwarding demo:
 
-- On VSCode's terminal:
 - ```bash
 cd $HOME/course/$USER
 source sc_venv_template/activate.sh
@@ -1139,14 +1035,13 @@ tensorboard --logdir=runs  --port=12345 serve
 
 ---
 
-## Day 1 recap
+## Recap
 
 As of now, I expect you managed to: 
 
 - Stay awake for the most part of this morning 😴
 - Have your own ssh keys 🗝️🔐
 - A working ssh connection to the supercomputers 🖥️
-- Can edit and transfer files via VSCode 📝
 - Submit jobs and read results 📫
 - Access web services on the login nodes 🧙‍♀️
 - Is ready to make great code! 💪
@@ -1204,7 +1099,7 @@ On the supercomputer:
 srun --time=00:05:00 \
      --nodes=1 --ntasks=1 \
      --partition=booster \
-     --account training2324 \
+     --account training2340 \
      --cpu_bind=none \
      --pty /bin/bash -i
 

@@ -1,8 +1,8 @@
 ---
-author: Alexandre Strube // Sabrina Benassou
-title: Getting Started with AI on Supercomputers 
-# subtitle: A primer in supercomputers`
-date: September 27, 2023
+author: Mathis Bode
+title: High-Performance Computing for Multiphase Reacting Flows
+subtitle: Machine-Learning assisted combustion simulations
+date: October 25, 2023
 ---
 
 # Topics (as links)
