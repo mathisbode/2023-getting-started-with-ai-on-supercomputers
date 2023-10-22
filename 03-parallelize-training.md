@@ -9,7 +9,7 @@ date: October 25, 2023
 
 ```bash
 cd $HOME/course/$USER
-https://github.com/mathisbode/2023-getting-started-with-ai-on-supercomputers.git
+git clone https://github.com/mathisbode/2023-getting-started-with-ai-on-supercomputers.git
 ```
 
 ---

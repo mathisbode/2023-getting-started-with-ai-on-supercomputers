@@ -173,7 +173,7 @@ date: October 25, 2023
 ### Connecting to JUWELS BOOSTER
 
 #### Getting compute time
-- Go to [https://go.fzj.de/intro-sc-ai-2023-project-join](https://go.fzj.de/intro-sc-ai-2023-project-join)
+- Go to [https://judoor.fz-juelich.de/projects/join/training2340](https://judoor.fz-juelich.de/projects/join/training2340)
 - Join the course project `training2340`
 - Sign the Usage Agreements ([Video](https://drive.google.com/file/d/1mEN1GmWyGFp75uMIi4d6Tpek2NC_X8eY/view))
 - Compute time allocation is based on compute projects. For every compute job, a compute project pays.
@@ -205,186 +205,7 @@ date: October 25, 2023
 
 ---
 
-#### SSH
-- SSH is a secure shell (terminal) connection to another computer
-- You connect from your computer to the LOGIN NODE
-- Security is given by public/private keys
-- A connection to the supercomputer needs a 
-    1. Key,
-    2. Configuration
-    3. Key/IP address known to the supercomputer
-
----
-
-### SSH
-
-```bash
-mkdir ~/.ssh/
-ssh-keygen -a 100 -t ed25519 -f ~/.ssh/id_ed25519-JSC
-```
-
-```bash
-$ ssh-keygen -a 100 -t ed25519 -f ~/.ssh/id_ed25519-JSC
-Generating public/private ed25519 key pair.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /Users/strube1/.ssh/id_ed25519-JSC
-Your public key has been saved in /Users/strube1/.ssh/id_ed25519-JSC.pub
-The key fingerprint is:
-SHA256:EGNNC1NTaN8fHwpfuZRPa50qXHmGcQjxp0JuU0ZA86U strube1@Strube-16
-The keys randomart image is:
-+--[ED25519 256]--+
-|      *++oo=o. . |
-|     . =+o .= o  |
-|      .... o.E..o|
-|       .  +.+o+B.|
-|        S  =o.o+B|
-|          . o*.B+|
-|          . . =  |
-|           o .   |
-|            .    |
-+----[SHA256]-----+
-```
-
----
-
-### SSH
-
-#### Configure SSH session
-
-```bash
-code $HOME/.ssh/config
-```
-
----
-
-### SSH
-
-#### Configure SSH session
-
-```bash
-Host booster
-        HostName juwels-booster.fz-juelich.de
-        User [MY_USERNAME]   # Here goes your username, not the word MY_USERNAME.
-        AddressFamily inet
-        IdentityFile ~/.ssh/id_ed25519-JSC
-```
-
-Copy contents to the config file and save it 
-
-**REPLACE [MY_USERNAME] WITH YOUR USERNAME!!! 🤦‍♂️**
-
----
-
-### SSH
-
-####  JSC restricts from where you can login
-#### So we need to:
-1. Find our ip range
-2. Add the range and key to [Judoor](https://judoor.fz-juelich.de)
-
----
-
-### SSH
-
-#### Find your ip/name range
-
-Open **[https://www.whatismyip.com](https://www.whatismyip.com)**
-
----
-
-### SSH
-
-Did everyone get their **own** ip address?
-
----
-
-### SSH - EXAMPLE
-
-- I will use the number `93.199.55.163`
-- **YOUR NUMBER IS DIFFERENT**
-- Seriously
-
----
-
-### SSH - Example: `93.199.55.163`
-
-- Make it simpler, replace the 2nd half with `"0.0/16"`:
-  - It was `93.199.55.163`
-  - Becomes `93.199.0.0/16` (with YOUR number, not with the example)
-- Add a `from=""` around it
-- So, it looks like this, now: `from="93.199.0.0/16"`
-- Add a second magic number, with a comma: `,10.0.0.0/8` 🧙‍♀️
-- I promise, the magic is worth it 🧝‍♂️ (If time allows)
-- In the end it looks like this: `from="93.199.0.0/16,10.0.0.0/8"` 🎬
-- Keep it open, we will use it later
-
----
-
-### SSH - Example: `93.199.0.0/16`
-
-#### Copy your ssh key
-- Terminal: `code ~/.ssh/id_ed25519-JSC.pub`
-- Something like this will open:
-
-- ```bash
-ssh-ed25519 AAAAC3NzaC1lZDE1NTA4AAAAIHaoOJF3gqXd7CV6wncoob0DL2OJNfvjgnHLKEniHV6F strube@demonstration.fz-juelich.de
-```
-
-- Paste this line at the same `key.txt` which you just opened
-
----
-
-### SSH
-
-#### Example: `93.199.0.0/16`
-
-- Put them together and copy again:
-- ```bash
-from="93.199.0.0/16,10.0.0.0/8" ssh-ed25519 AAAAC3NzaC1lZDE1NTA4AAAAIHaoOJF3gqXd7CV6wncoob0DL2OJNfvjgnHLKEniHV6F strube@demonstration.fz-juelich.de
-```
-
----
-
-### SSH
-
-- Let's add it on [Judoor](https://judoor.fz-juelich.de)
-- ![](images/manage-ssh-keys.png)
-- Do it for JUWELS and JUDAC with the same key
-
----
-
-### SSH
-
-#### Add new key to [Judoor](https://judoor.fz-juelich.de)
-
-![](images/manage-ssh-keys-from-and-key.png){ width=850px }
-
-This might take some minutes
-
----
-
-### SSH: Exercise
-
-That's it! Give it a try (and answer yes)
-
-```bash
-$ ssh booster
-The authenticity of host 'juwels22.fz-juelich.de (134.94.0.185)' cannot be established.
-ED25519 key fingerprint is SHA256:ASeu9MJbkFx3kL1FWrysz6+paaznGenChgEkUW8nRQU.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? Yes
-**************************************************************************
-*                            Welcome to JUWELS BOOSTER                   *
-**************************************************************************
-...
-...
-strube1@juwels22~ $ 
-```
-
----
-
-### SSH: Exercise 
+### Links and working directory 
 #### Make sure you are connected to the supercomputer
 
 ```bash
@@ -981,6 +802,185 @@ epoch     train_loss  valid_loss  error_rate  time
 
 ---
 
+#### SSH
+- SSH is a secure shell (terminal) connection to another computer
+- You connect from your computer to the LOGIN NODE
+- Security is given by public/private keys
+- A connection to the supercomputer needs a 
+    1. Key,
+    2. Configuration
+    3. Key/IP address known to the supercomputer
+
+---
+
+### SSH
+
+```bash
+mkdir ~/.ssh/
+ssh-keygen -a 100 -t ed25519 -f ~/.ssh/id_ed25519-JSC
+```
+
+```bash
+$ ssh-keygen -a 100 -t ed25519 -f ~/.ssh/id_ed25519-JSC
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/strube1/.ssh/id_ed25519-JSC
+Your public key has been saved in /Users/strube1/.ssh/id_ed25519-JSC.pub
+The key fingerprint is:
+SHA256:EGNNC1NTaN8fHwpfuZRPa50qXHmGcQjxp0JuU0ZA86U strube1@Strube-16
+The keys randomart image is:
++--[ED25519 256]--+
+|      *++oo=o. . |
+|     . =+o .= o  |
+|      .... o.E..o|
+|       .  +.+o+B.|
+|        S  =o.o+B|
+|          . o*.B+|
+|          . . =  |
+|           o .   |
+|            .    |
++----[SHA256]-----+
+```
+
+---
+
+### SSH
+
+#### Configure SSH session
+
+```bash
+code $HOME/.ssh/config
+```
+
+---
+
+### SSH
+
+#### Configure SSH session
+
+```bash
+Host booster
+        HostName juwels-booster.fz-juelich.de
+        User [MY_USERNAME]   # Here goes your username, not the word MY_USERNAME.
+        AddressFamily inet
+        IdentityFile ~/.ssh/id_ed25519-JSC
+```
+
+Copy contents to the config file and save it 
+
+**REPLACE [MY_USERNAME] WITH YOUR USERNAME!!! 🤦‍♂️**
+
+---
+
+### SSH
+
+####  JSC restricts from where you can login
+#### So we need to:
+1. Find our ip range
+2. Add the range and key to [Judoor](https://judoor.fz-juelich.de)
+
+---
+
+### SSH
+
+#### Find your ip/name range
+
+Open **[https://www.whatismyip.com](https://www.whatismyip.com)**
+
+---
+
+### SSH
+
+Did everyone get their **own** ip address?
+
+---
+
+### SSH - EXAMPLE
+
+- I will use the number `93.199.55.163`
+- **YOUR NUMBER IS DIFFERENT**
+- Seriously
+
+---
+
+### SSH - Example: `93.199.55.163`
+
+- Make it simpler, replace the 2nd half with `"0.0/16"`:
+  - It was `93.199.55.163`
+  - Becomes `93.199.0.0/16` (with YOUR number, not with the example)
+- Add a `from=""` around it
+- So, it looks like this, now: `from="93.199.0.0/16"`
+- Add a second magic number, with a comma: `,10.0.0.0/8` 🧙‍♀️
+- I promise, the magic is worth it 🧝‍♂️ (If time allows)
+- In the end it looks like this: `from="93.199.0.0/16,10.0.0.0/8"` 🎬
+- Keep it open, we will use it later
+
+---
+
+### SSH - Example: `93.199.0.0/16`
+
+#### Copy your ssh key
+- Terminal: `code ~/.ssh/id_ed25519-JSC.pub`
+- Something like this will open:
+
+- ```bash
+ssh-ed25519 AAAAC3NzaC1lZDE1NTA4AAAAIHaoOJF3gqXd7CV6wncoob0DL2OJNfvjgnHLKEniHV6F strube@demonstration.fz-juelich.de
+```
+
+- Paste this line at the same `key.txt` which you just opened
+
+---
+
+### SSH
+
+#### Example: `93.199.0.0/16`
+
+- Put them together and copy again:
+- ```bash
+from="93.199.0.0/16,10.0.0.0/8" ssh-ed25519 AAAAC3NzaC1lZDE1NTA4AAAAIHaoOJF3gqXd7CV6wncoob0DL2OJNfvjgnHLKEniHV6F strube@demonstration.fz-juelich.de
+```
+
+---
+
+### SSH
+
+- Let's add it on [Judoor](https://judoor.fz-juelich.de)
+- ![](images/manage-ssh-keys.png)
+- Do it for JUWELS and JUDAC with the same key
+
+---
+
+### SSH
+
+#### Add new key to [Judoor](https://judoor.fz-juelich.de)
+
+![](images/manage-ssh-keys-from-and-key.png){ width=850px }
+
+This might take some minutes
+
+---
+
+### SSH: Exercise
+
+That's it! Give it a try (and answer yes)
+
+```bash
+$ ssh booster
+The authenticity of host 'juwels22.fz-juelich.de (134.94.0.185)' cannot be established.
+ED25519 key fingerprint is SHA256:ASeu9MJbkFx3kL1FWrysz6+paaznGenChgEkUW8nRQU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? Yes
+**************************************************************************
+*                            Welcome to JUWELS BOOSTER                   *
+**************************************************************************
+...
+...
+strube1@juwels22~ $ 
+```
+
+---
+
 ### Tools for results analysis
 
 - We already ran the code and have results
@@ -1039,11 +1039,11 @@ tensorboard --logdir=runs  --port=12345 serve
 
 As of now, I expect you managed to: 
 
-- Stay awake for the most part of this morning 😴
-- Have your own ssh keys 🗝️🔐
-- A working ssh connection to the supercomputers 🖥️
+- Stay awake for the most part of this session 😴
 - Submit jobs and read results 📫
 - Access web services on the login nodes 🧙‍♀️
+- Have your own ssh keys 🗝️🔐
+- A working ssh connection to the supercomputers 🖥️
 - Is ready to make great code! 💪
 
 ---
